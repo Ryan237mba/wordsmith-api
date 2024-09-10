@@ -69,7 +69,7 @@ pipeline{
         stage("Docker build and Push"){
             steps{
                 script{
-                    withAWS(region:'us-east-2',credentials:'aws-creds'){
+                    withAWS(region:'eu-north-1',credentials:'aws-creds'){
                         def componentVersion = getVersion()
                         dir("${WORKSPACE}"){
                             sh"""

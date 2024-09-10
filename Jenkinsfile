@@ -46,7 +46,7 @@ pipeline{
         stage("Upload jar to Nexus"){
             steps{
                 script{
-                    // def componentVersion = getVersion()
+                       def componentVersion = getVersion()
                     // nexusArtifactUploader(
                     //     nexusVersion: 'nexus3',
                     //     protocol: 'http',
@@ -70,7 +70,7 @@ pipeline{
             steps{
                 script{
                     withAWS(region:'eu-north-1',credentials:'aws-creds'){
-                        def componentVersion = getVersion()
+                        //def componentVersion = getVersion()
                         dir("${WORKSPACE}"){
                             sh"""aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 767397876306.dkr.ecr.eu-north-1.amazonaws.com
                             docker build -t wordsmith-api .

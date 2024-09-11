@@ -52,7 +52,7 @@ pipeline{
                     //     protocol: 'http',
                     //     nexusUrl: '3.138.155.75:8081',
                     //     groupId: 'com.example',
-                    //     version: componentVersion,
+                    //     version: "${componentVersion}",
                     //     repository: 'maven-releases',
                     //     credentialsId: 'nexus-creds',
                     //     artifacts: [
